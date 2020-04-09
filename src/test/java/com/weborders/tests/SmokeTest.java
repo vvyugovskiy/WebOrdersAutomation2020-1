@@ -8,6 +8,7 @@ import static org.testng.Assert.assertEquals;
 
 
 public class SmokeTest extends AbstractBaseTest {
+
     @Test(dataProvider = "smokeTestData")
     public void smokeTest(String component, String expectedPageSubTitle) {
         extentTest = extentReports.createTest("Verify " + component);
@@ -17,7 +18,7 @@ public class SmokeTest extends AbstractBaseTest {
         assertEquals(loginPage.getPageSubtitleText(), expectedPageSubTitle);
         extentTest.pass(component + " verified!");
     }
-    @DataProvider
+    @DataProvider (parallel = true) // to execute all tests in parallel
     public Object[][] smokeTestData() {
         return new Object[][]{
                 {"View all orders", "List of All Orders"},
