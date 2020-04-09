@@ -58,6 +58,7 @@ public class Driver {
         if (driverPool != null) {
             driverPool.get().quit();
             driverPool.remove();
+
         }
     }
 }
