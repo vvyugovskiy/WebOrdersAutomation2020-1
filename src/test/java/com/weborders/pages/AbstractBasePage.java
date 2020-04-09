@@ -24,7 +24,11 @@ public abstract class AbstractBasePage {
     @FindBy(tagName = "h2")
     protected WebElement pageSubtitle;
 
+<<<<<<< HEAD
     public String getPageSubtitleText() {
+=======
+    public String getPageSubtitleText(){
+>>>>>>> 39cd1d4ed157f4792f593c64dfc7572533943760
         BrowserUtilities.waitForPageToLoad(10);
         return pageSubtitle.getText().trim();
     }
@@ -39,7 +43,10 @@ public abstract class AbstractBasePage {
 
     /**
      * Specify component name as a parameter, like: View all products or Orders
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 39cd1d4ed157f4792f593c64dfc7572533943760
      * @param component
      */
     public void navigateTo(String component) {
