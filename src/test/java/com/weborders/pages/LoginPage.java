@@ -13,14 +13,21 @@ public class LoginPage extends AbstractBasePage {
     @FindBy(id = "ctl00_MainContent_password")
     private WebElement password;
 
-
     public void login() {
-        String usernameValue = ConfigurationReader.getProperty("username");
+        String userNameValue = ConfigurationReader.getProperty("username");
         String passwordValue = ConfigurationReader.getProperty("password");
-        userName.sendKeys(usernameValue);
+        userName.sendKeys(userNameValue);
         password.sendKeys(passwordValue, Keys.ENTER);
+
     }
 
+    /**
+     * Method to login, version #1
+     * Login as a specific user
+     *
+     * @param usernameValue
+     * @param passwordValue
+     */
     public void login(String usernameValue, String passwordValue) {
         userName.sendKeys(usernameValue);
         password.sendKeys(passwordValue, Keys.ENTER);
